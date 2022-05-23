@@ -2,6 +2,7 @@ import React from 'react'
 import Message from './Message'
 import MessageSender from './MessageSender'
 import s from './Message.module.css'
+import FriendMessage from './FriendMessage'
 
 // структуру объекта не менять
 export const message0 = {
@@ -15,6 +16,18 @@ export const message0 = {
         time: '22:00',
     },
 }
+export const friendMessage0 = {
+    id: 0,
+    user: {
+        avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
+        name: 'Friend Name',
+    },
+    message: {
+        text: 'можно добавить зеркальное сообщение для тренировки css',
+        time: '22:00',
+    },
+}
+
 
 const HW1 = () => {
     return (
@@ -25,6 +38,9 @@ const HW1 = () => {
 
             {/*проверка отображения (не менять)*/}
             <Message message={message0}/>
+
+            {/*не обязательно*/}
+            <FriendMessage message={friendMessage0}/>
 
             {/*для автоматической проверки дз (не менять)*/}
             <MessageSender M={Message}/>

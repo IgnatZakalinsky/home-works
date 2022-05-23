@@ -17,7 +17,7 @@ const MessageSender = (props: any) => {
                 time: new Date().toTimeString().slice(0, 5),
             },
         }])
-        setText('')
+        setTimeout(() => setText(''), 4)
     }
 
     return (
@@ -29,6 +29,8 @@ const MessageSender = (props: any) => {
                     id={'hw1-textarea'}
                     value={text}
                     onChange={e => setText(e.currentTarget.value)}
+                    onKeyPress={e => e.key === 'Enter' && e.shiftKey && addMessage()}
+                    title={'Shift+Enter for send'}
                     className={s.textarea}
                 />
                 <button id={'hw1-button'} onClick={addMessage} className={s.button}>

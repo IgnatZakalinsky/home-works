@@ -8,16 +8,25 @@
 
 .message {
     display: flex;
+    justify-content: right;
     border: 1px solid lime;
     margin: 10px;
 }
 
-.sendForm {
+.friendMessage {
+    display: flex;
+    border: 1px solid red;
+    margin: 10px;
+}
 
+.sendForm {
+    display: flex;
+    justify-content: right;
+    margin: 10px;
 }
 
 .textarea {
-    margin: 0 10px;
+
 }
 
 .button {
