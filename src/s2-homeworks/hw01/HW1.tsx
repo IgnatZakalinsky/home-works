@@ -4,8 +4,11 @@ import MessageSender from './MessageSender'
 import s from './Message.module.css'
 import FriendMessage from './FriendMessage'
 
+// нужно создать правильный тип вместо any
+export type MessageType = any
+
 // структуру объекта не менять
-export const message0 = {
+export const message0: MessageType = {
     id: 0,
     user: {
         avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
@@ -16,8 +19,8 @@ export const message0 = {
         time: '22:00',
     },
 }
-export const friendMessage0 = {
-    id: 0,
+export const friendMessage0: MessageType = {
+    id: 100,
     user: {
         avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
         name: 'Friend Name',
@@ -32,7 +35,8 @@ export const friendMessage0 = {
 const HW1 = () => {
     return (
         <div id={'hw1'} className={s.hw1}>
-            <hr/>{/*можно убрать этот тег*/}
+            <hr/>
+            {/*можно убрать этот тег*/}
 
             <div className={s.hwTitle}>homeworks 1</div>
 
@@ -45,8 +49,10 @@ const HW1 = () => {
             {/*для автоматической проверки дз (не менять)*/}
             <MessageSender M={Message}/>
 
-            <hr/>{/*можно убрать этот тег*/}
-            <hr/>{/*можно убрать этот тег*/}
+            <hr/>
+            {/*можно убрать этот тег*/}
+            <hr/>
+            {/*можно убрать этот тег*/}
         </div>
     )
 }
