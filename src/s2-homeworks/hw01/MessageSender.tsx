@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {message0} from './HW1'
+import s from './Message.module.css'
 
 // компонента, которая тестирует вашу компоненту (не изменять, any не трогать)
 const MessageSender = (props: any) => {
@@ -23,9 +24,18 @@ const MessageSender = (props: any) => {
         <>
             {messages.map(m => <M key={'message' + m.id} message={m}/>)}
 
-            <div id={'hw1-send-message-form'}>
-                <textarea id={'hw1-textarea'} value={text} onChange={e => setText(e.currentTarget.value)} style={{margin: '0 10px'}}/>
-                <button id={'hw1-button'} onClick={addMessage}>send</button>
+            <div id={'hw1-send-message-form'} className={s.sendForm}>
+                <textarea
+                    id={'hw1-textarea'}
+                    value={text}
+                    onChange={e => setText(e.currentTarget.value)}
+                    className={s.textarea}
+                />
+                <button id={'hw1-button'} onClick={addMessage} className={s.button}>
+                    {/*текст кнопки могут изменить студенты*/}
+                    send
+                    {/**/}
+                </button>
             </div>
         </>
     )
