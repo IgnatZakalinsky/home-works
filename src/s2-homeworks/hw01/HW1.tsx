@@ -2,6 +2,7 @@ import React from 'react'
 import Message from './Message'
 import MessageSender from './MessageSender'
 import s from './Message.module.css'
+import s2 from '../../s1-main/App.module.css'
 import FriendMessage from './FriendMessage'
 
 // нужно создать правильный тип вместо any
@@ -34,11 +35,11 @@ export const friendMessage0: MessageType = {
 
 const HW1 = () => {
     return (
-        <div id={'hw1'} className={s.hw1}>
+        <div id={'hw1'} className={s2.hw}>
             <hr/>
             {/*можно убрать этот тег*/}
 
-            <div className={s.hwTitle}>homeworks 1</div>
+            <div className={s2.hwTitle}>homeworks 1</div>
 
             {/*проверка отображения (не менять)*/}
             <Message message={message0}/>

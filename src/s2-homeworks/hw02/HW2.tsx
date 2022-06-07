@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
 import s from './Affairs.module.css'
-import s2 from '../hw01/Message.module.css'
+import s2 from '../../s1-main/App.module.css'
 
 // types
 export type AffairPriorityType = any // 'high' | 'low' | 'middle' // need to fix any
@@ -44,7 +44,7 @@ function HW2() {
     const deleteAffairCallback = (_id: any) => setAffairs(deleteAffair(affairs, _id)) // need to fix any // number
 
     return (
-        <div id={'hw2'} className={s.hw2}>
+        <div id={'hw2'} className={s2.hw}>
             <hr/>
             {/*можно убрать этот тег*/}
 

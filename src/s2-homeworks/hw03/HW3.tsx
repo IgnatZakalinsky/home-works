@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {v1} from 'uuid'
 import s from './Greeting.module.css'
+import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
 
 // types
@@ -9,7 +10,7 @@ export type UserType = {
     name: string // need to fix any
 }
 
-const HW1 = () => {
+const HW3 = () => {
     const [users, setUsers] = useState<UserType[]>([]) // need to fix any
 
     const addUserCallback = (name: string) => { // need to fix any
@@ -21,9 +22,11 @@ const HW1 = () => {
     }
 
     return (
-        <div id={'hw3'} className={s.hw3}>
+        <div id={'hw3'} className={s2.hw}>
             <hr/>
             {/*можно убрать этот тег*/}
+
+            <div className={s2.hwTitle}>homeworks 3</div>
 
             {/*для автоматической проверки дз (не менять)*/}
             <GreetingContainer users={users} addUserCallback={addUserCallback}/>
@@ -36,4 +39,4 @@ const HW1 = () => {
     )
 }
 
-export default HW1
+export default HW3
