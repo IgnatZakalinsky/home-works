@@ -1,0 +1,39 @@
+.link {
+    text-decoration: none;
+    color: #7af;
+    margin: 10px;
+}
+
+.link:hover {
+    color: #c9f;
+}
+
+.active {
+    color: #5ff;
+}
+
+.burgerMenu {
+    width: 21px;
+    height: 21px;
+
+    margin: 10px;
+
+    background: #99ff99;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 280px;
+}
+
+.showMenu {
+    transition-duration: 500ms;
+    transform: translate(0);
+}
+
+.hideMenu {
+    transition-duration: 500ms;
+    transform: translate(-220px);
+}
