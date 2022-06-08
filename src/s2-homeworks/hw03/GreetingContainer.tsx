@@ -20,14 +20,17 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         error && setError('')
     }
     const addUser = () => {
+        addUserCallback(name)
+        setName('')
+    }
+
+    const onBlur = () => {
         const trimmedName = name.trim()
 
-        if (trimmedName) {
-            addUserCallback(trimmedName) // need to fix
-        } else {
+        if (!trimmedName) {
             setError('name is require!')
         }
-        setName('')
+        setName(trimmedName) // need to fix
     }
 
     const onEnter = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -44,6 +47,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
 
     return (
         <Greeting
+            onBlur={onBlur}
             name={name}
             setNameCallback={setNameCallback}
             addUser={addUser}

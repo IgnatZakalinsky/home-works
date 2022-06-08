@@ -5,6 +5,7 @@ type GreetingPropsType = {
     name: string // need to fix any
     setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void // need to fix any
     addUser: () => void // need to fix any
+    onBlur: () => void // need to fix any
     onEnter: (e: KeyboardEvent<HTMLInputElement>) => void
     error: string // need to fix any
     totalUsers: number // need to fix any
@@ -13,7 +14,7 @@ type GreetingPropsType = {
 
 // презентационная компонента (для верстальщика)
 const Greeting: React.FC<GreetingPropsType> = (
-    {name, setNameCallback, addUser, onEnter, error, totalUsers, lastUser} // деструктуризация пропсов
+    {name, setNameCallback, addUser, onEnter, error, totalUsers, lastUser, onBlur} // деструктуризация пропсов
 ) => {
     const inputClass = error ? s.errorInput : s.input // need to fix with (?:)
 
@@ -26,7 +27,7 @@ const Greeting: React.FC<GreetingPropsType> = (
                     onChange={setNameCallback}
                     className={inputClass}
                     onKeyDown={onEnter}
-                    onBlur={setNameCallback}
+                    onBlur={onBlur}
                 />
                 <div id={'hw3-error'} className={s.error}>{error}</div>
             </div>
