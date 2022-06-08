@@ -38,6 +38,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             const trimmedName = name.trim()
 
             if (!trimmedName) {
+                setName('')
                 setError('name is require!')
             } else {
                 addUser(trimmedName)
