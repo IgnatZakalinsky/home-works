@@ -19,8 +19,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         setName(e.currentTarget.value) // need to fix
         error && setError('')
     }
-    const addUser = (x?: string) => {
-        addUserCallback(x || name)
+    const addUser = () => {
+        addUserCallback(name)
         setName('')
     }
 
@@ -41,7 +41,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
                 setName('')
                 setError('name is require!')
             } else {
-                addUser(trimmedName)
+                addUserCallback(trimmedName)
+                setName('')
             }
         }
     }
