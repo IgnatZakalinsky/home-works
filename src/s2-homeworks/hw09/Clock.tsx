@@ -62,14 +62,14 @@ function Clock() {
 
             <SuperButton
                 id={'hw9-button-start'}
-                disabled={!timerId} // пишут студенты
+                disabled={!!timerId} // пишут студенты
                 onClick={start}
             >
                 start
             </SuperButton>
             <SuperButton
                 id={'hw9-button-stop'}
-                disabled={!!timerId} // пишут студенты
+                disabled={!timerId} // пишут студенты
                 onClick={stop}
             >
                 stop
