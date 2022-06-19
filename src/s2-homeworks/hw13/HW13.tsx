@@ -7,17 +7,20 @@ const HW13 = () => {
     const [answer, setAnswer] = useState('')
     const [info, setInfo] = useState('')
 
-    const send = (x?: boolean) => () => {
+    const send = (x?: boolean | null) => () => {
+        const url = x === null ? 'https://xxxxxx.ccc' : 'https://neko-cafe-back.herokuapp.com/auth/test'
+
         setAnswer('...loading')
         setInfo('...loading')
-        axios.post('https://neko-cafe-back.herokuapp.com/auth/test', {success: x})
+        axios
+            .post(url, {success: x})
             .then(res => {
                 setAnswer(res.data.errorText)
                 setInfo(res.data.info)
             })
             .catch(e => {
-                setAnswer(e.response.data.errorText)
-                setInfo(e.response.data.info)
+                setAnswer(e.response?.data?.errorText || e.message)
+                setInfo(e.response?.data?.info || e.name)
             })
     }
 
@@ -49,6 +52,13 @@ const HW13 = () => {
                 disabled={answer === '...loading'}
             >
                 send undefined
+            </SuperButton>
+            <SuperButton
+                id={'hw13-send-null'}
+                onClick={send(null)}
+                disabled={answer === '...loading'}
+            >
+                send null
             </SuperButton>
 
             <div id={'hw13-answer'}>
