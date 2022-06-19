@@ -8,6 +8,8 @@ const HW9 = () => {
             <hr/>
             {/*можно убрать этот тег*/}
 
+            <div className={s2.hwTitle}>homeworks 9</div>
+
             {/*should work (должно работать)*/}
             <Clock/>
 

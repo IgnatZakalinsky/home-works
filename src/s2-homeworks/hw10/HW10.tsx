@@ -26,6 +26,8 @@ const HW10 = () => {
             <hr/>
             {/*можно убрать этот тег*/}
 
+            <div className={s2.hwTitle}>homeworks 10</div>
+
             {/*should work (должно работать)*/}
             {isLoading
                 ? (

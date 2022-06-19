@@ -18,6 +18,8 @@ function HW11() {
             <hr/>
             {/*можно убрать этот тег*/}
 
+            <div className={s2.hwTitle}>homeworks 11</div>
+
             {/*should work (должно работать)*/}
             <div>
                 <span id={'hw11-value'} style={{display: 'inline-block', width: 32}}>{value1}</span>
