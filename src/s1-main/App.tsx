@@ -15,14 +15,14 @@ const App = () => {
    }, [themeId])
    return (
       <div className={s.App} data-theme={themeId}>
-         <div>react homeworks:</div>
+          {/*<div>react homeworks:</div>*/}
 
-         {/*<HW1/>*/}
+          <HW1/>
          {/*<HW2/>*/}
          {/*<HW3/>*/}
          {/*<HW4/>*/}
 
-         <HW5 />
+         {/*<HW5 />*/}
       </div>
    )
 }

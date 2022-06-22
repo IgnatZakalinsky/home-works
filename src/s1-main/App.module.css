@@ -1,5 +1,6 @@
 .App {
-
+    padding-top: 107px;
+    padding-bottom: 63px;
 }
 
 .hw {
@@ -7,5 +8,22 @@
 }
 
 .hwTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 10px;
+    margin-left: 70px;
+}
 
+.hwContainer {
+    padding: 0 70px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+hr {
+    border-top: 1px solid #d9d9d9;
+    margin: 0
 }

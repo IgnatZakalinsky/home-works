@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {message0} from './HW1'
+import React, { useState } from 'react'
+import { message0 } from './HW1'
 import s from './Message.module.css'
 
 // компонента, которая тестирует вашу компоненту (не изменять, any не трогать)
@@ -29,13 +29,15 @@ const MessageSender = (props: any) => {
                     id={'hw1-textarea'}
                     value={text}
                     onChange={e => setText(e.currentTarget.value)}
-                    onKeyPress={e => e.key === 'Enter' && e.shiftKey && addMessage()}
+                    placeholder={'Type your message'}
+                    onKeyDown={e => e.key === 'Enter' && e.shiftKey && addMessage()}
                     title={'Shift+Enter for send'}
                     className={s.textarea}
+                    rows={1}
                 />
                 <button id={'hw1-button'} onClick={addMessage} className={s.button}>
                     {/*текст кнопки могут изменить студенты*/}
-                    send
+                    Send
                     {/**/}
                 </button>
             </div>

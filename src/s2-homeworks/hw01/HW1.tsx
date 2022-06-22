@@ -4,7 +4,7 @@ import MessageSender from './MessageSender'
 import s from './Message.module.css'
 import s2 from '../../s1-main/App.module.css'
 import FriendMessage from './FriendMessage'
-
+import avatar from './avatar.png'
 // нужно создать правильный тип вместо any
 export type MessageType = any
 
@@ -12,18 +12,18 @@ export type MessageType = any
 export const message0: MessageType = {
     id: 0,
     user: {
-        avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
+        avatar: avatar,
         name: 'Some Name',
     },
     message: {
-        text: 'some text',
+        text: 'some textsome textsome textsome textsome textsome textsome text',
         time: '22:00',
     },
 }
 export const friendMessage0: MessageType = {
     id: 100,
     user: {
-        avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
+        avatar: avatar,
         name: 'Friend Name',
     },
     message: {
@@ -36,19 +36,24 @@ export const friendMessage0: MessageType = {
 const HW1 = () => {
     return (
         <div id={'hw1'} className={s2.hw}>
-            <hr/>
+            {/*<hr/>*/}
             {/*можно убрать этот тег*/}
 
-            <div className={s2.hwTitle}>homeworks 1</div>
+            <div className={s2.hwTitle}>Homework #1</div>
+            <hr/>
+            <div className={s2.hwContainer}>
+                {/*проверка отображения (не менять)*/}
+                <div>
+                    <Message message={message0}/>
 
-            {/*проверка отображения (не менять)*/}
-            <Message message={message0}/>
+                    {/*не обязательно*/}
+                    <FriendMessage message={friendMessage0}/>
+                </div>
 
-            {/*не обязательно*/}
-            <FriendMessage message={friendMessage0}/>
+                {/*для автоматической проверки дз (не менять)*/}
+                <MessageSender M={Message}/>
+            </div>
 
-            {/*для автоматической проверки дз (не менять)*/}
-            <MessageSender M={Message}/>
 
             <hr/>
             {/*можно убрать этот тег*/}
