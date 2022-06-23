@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Affairs from './Affairs'
 import s from './Affairs.module.css'
 import s2 from '../../s1-main/App.module.css'
@@ -45,10 +45,11 @@ function HW2() {
 
     return (
         <div id={'hw2'} className={s2.hw}>
-            <hr/>
+            {/*<hr/>*/}
             {/*можно убрать этот тег*/}
 
-            <div className={s2.hwTitle}>homeworks 2</div>
+            <div className={s2.hwTitle}>Homework #2</div>
+            <hr/>
 
             {/*не менять*/}
             <Affairs
@@ -58,7 +59,7 @@ function HW2() {
                 filter={filter}
             />
 
-            <hr/>
+            {/*<hr/>*/}
             {/*можно убрать этот тег*/}
             <hr/>
             {/*можно убрать этот тег*/}

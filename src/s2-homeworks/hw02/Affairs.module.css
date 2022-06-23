@@ -1,41 +1,86 @@
-.button {
-    margin: 10px;
-    width: 60px;
-
-    background: #003300;
-    color: #99ff99;
-    outline: none;
+.all {
+    --color: #06c;
 }
-.button:focus {
-    outline: #99ff99 solid 1px;
+
+.low {
+    --color: #0c2;
+}
+
+.high {
+    --color: #c00;
+}
+
+.middle {
+    --color: #cc9c00;
+}
+
+.button {
+    background: transparent;
+    border: 1px solid var(--color);
+    border-radius: 15px;
+    color: var(--color);
+    outline: none;
+    padding: 5px 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
 }
 
 .button:active {
-    background: #99ff99;
+    background: var(--color);
+    color: white;
 }
 
 .active {
-    background: #335533;
+    background: var(--color);
+    color: white;
 }
 
 .affair {
     display: flex;
     align-items: center;
+    border: 1.5px solid var(--color);
+    width: 185px;
+    border-radius: 5px;
+}
+
+.affairs {
+    display: flex;
+    gap: 17px;
+    flex-wrap: wrap;
+    max-width: 450px;
 }
 
 .item {
-    margin: 10px;
-    width: 100px;
+    width: 145px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.high {
-    color: red;
+.container {
+    padding: 32px 0 73px 70px;
 }
 
-.middle {
-    color: orange;
+.buttonContainer {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+
 }
 
-.low {
-    color: lime;
+.closeButton {
+    border: none;
+    border-left: 1.5px solid var(--color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 40px;
+    height: 37px;
+    font-weight: 900;
+    cursor: pointer;
 }
