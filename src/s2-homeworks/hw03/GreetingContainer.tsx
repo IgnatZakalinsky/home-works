@@ -1,6 +1,6 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
+import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
 import Greeting from './Greeting'
-import {UserType} from './HW3'
+import { UserType } from './HW3'
 
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any
@@ -28,7 +28,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         const trimmedName = name.trim()
 
         if (!trimmedName) {
-            setError('name is require!')
+            setError('name is required!')
         }
         setName(trimmedName) // need to fix
     }
@@ -39,7 +39,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
 
             if (!trimmedName) {
                 setName('')
-                setError('name is require!')
+                setError('name is required!')
             } else {
                 addUserCallback(trimmedName)
                 setName('')

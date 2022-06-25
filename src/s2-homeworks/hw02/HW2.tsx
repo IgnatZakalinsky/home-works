@@ -24,11 +24,11 @@ const defaultAffairs: any = [ // need to fix any // AffairType[]
 // pure helper functions
 export const filterAffairs = (affairs: any, filter: any): any => { // need to fix any // (affairs: AffairType[], filter: FilterType): AffairType[]
     if (filter === 'all') return affairs // создаёт студент
-    // else if (filter === 'low') return affairs.filter(a => a.priority === 'low')
-    // else if (filter === 'middle') return affairs.filter(a => a.priority === 'middle')
-    // else if (filter === 'high') return affairs.filter(a => a.priority === 'high')
-    // else {
-    // }
+        // else if (filter === 'low') return affairs.filter(a => a.priority === 'low')
+        // else if (filter === 'middle') return affairs.filter(a => a.priority === 'middle')
+        // else if (filter === 'high') return affairs.filter(a => a.priority === 'high')
+        // else {
+        // }
     // return []
     else return affairs.filter((a: any) => a.priority === filter) // need to fix // создаёт студент
 }
@@ -44,7 +44,7 @@ function HW2() {
     const deleteAffairCallback = (_id: any) => setAffairs(deleteAffair(affairs, _id)) // need to fix any // number
 
     return (
-        <div id={'hw2'} className={s2.hw}>
+        <div id={'hw2'} className={s2.hw} style={{marginTop: '39px'}}>
             {/*<hr/>*/}
             {/*можно убрать этот тег*/}
 

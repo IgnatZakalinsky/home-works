@@ -1,4 +1,4 @@
-import React, {ChangeEvent, KeyboardEvent} from 'react'
+import React, { ChangeEvent, KeyboardEvent } from 'react'
 import s from './Greeting.module.css'
 
 type GreetingPropsType = {
@@ -16,24 +16,28 @@ type GreetingPropsType = {
 const Greeting: React.FC<GreetingPropsType> = (
     {name, setNameCallback, addUser, onEnter, error, totalUsers, lastUser, onBlur} // деструктуризация пропсов
 ) => {
-    const inputClass = error ? s.errorInput : s.input // need to fix with (?:)
+    const inputClass = error ? `${s.input} ${s.errorInput}` : s.input // need to fix with (?:)
 
     return (
         <div id={'hw3-form'} className={s.greetingForm}>
-            <div>
-                <input
-                    id={'hw3-input'}
-                    value={name}
-                    onChange={setNameCallback}
-                    className={inputClass}
-                    onKeyDown={onEnter}
-                    onBlur={onBlur}
-                />
-                <div id={'hw3-error'} className={s.error}>{error}</div>
+            <div id={'hw3-users-total'} className={s.count}>{totalUsers}</div>
+            <div className={s.inputAndButtonContainer}>
+                <div>
+                    <input
+                        id={'hw3-input'}
+                        value={name}
+                        onChange={setNameCallback}
+                        className={inputClass}
+                        onKeyDown={onEnter}
+                        onBlur={onBlur}
+                    />
+                    <div id={'hw3-error'} className={s.error}>{error}</div>
+                </div>
+
+                <button id={'hw3-button'} onClick={addUser} className={s.button} disabled={!name}>add</button>
+
             </div>
 
-            <button id={'hw3-button'} onClick={addUser} className={s.button} disabled={!name}>add</button>
-            <div id={'hw3-users-total'} className={s.count}>{totalUsers}</div>
             {lastUser && (
                 <div className={s.greeting}>
                     hello{' '}
