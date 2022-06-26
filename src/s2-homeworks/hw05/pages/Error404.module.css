@@ -1,0 +1,14 @@
+.error404 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 200px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 244px;
+}
+
+.wrapper {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - var(--header_height));
+    justify-content: center;
+}

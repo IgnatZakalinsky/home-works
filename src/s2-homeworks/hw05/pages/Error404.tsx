@@ -1,11 +1,12 @@
 import React from 'react'
+import s from './Error404.module.css'
 
 const Error404 = () => {
     return (
         <div id={'hw5-page-404'}>
-            <div>404</div>
-            <div>Page not found!</div>
-            <div>—ฅ/ᐠ.̫ .ᐟ\ฅ—</div>
+            <div className={s.wrapper}>
+                <span className={s.error404}>404</span>
+            </div>
         </div>
     )
 }
