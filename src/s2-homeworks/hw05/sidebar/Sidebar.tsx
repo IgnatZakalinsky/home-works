@@ -12,12 +12,20 @@ type PropsType = {
 export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
     return (
         <>
+            {/*бэкграунд справа от открытого меню*/}
             {open && <div className={s.background} onClick={handleClose}/>}
+
             <aside className={`${s.sidebar} ${open ? s.open : ''}`}>
                 <button className={s.close} onClick={handleClose}>
-                    <img src={closeIcon} alt='close sidebar'/>
+                    <img
+                        src={closeIcon}
+                        alt='close sidebar'
+                        id={'hw5-menu-close'}
+                    />
                 </button>
+
                 <nav id={'hw5-menu'} className={s.nav}>
+
                     <NavLink
                         id={'hw5-pre-junior-link'}
                         to={PATH.PRE_JUNIOR}
@@ -42,6 +50,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     >
                         Junior+
                     </NavLink>
+
                 </nav>
             </aside>
         </>

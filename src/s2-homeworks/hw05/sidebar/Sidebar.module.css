@@ -2,11 +2,12 @@
     background: #fff;
     height: 100vh;
     left: -317px;
-    max-width: 317px;
-    min-width: 317px;
+    /* max-width: 317px; */
+    /* min-width: 317px; */
     position: fixed;
     top: 0;
     transition: 0.2s ease-in;
+    width: 317px;
     z-index: 2;
 }
 
