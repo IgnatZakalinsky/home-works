@@ -18,13 +18,13 @@
 .disabled {
     background: #004d99;
     opacity: 0.5;
+    color: #002e5c;
 }
 
 .button {
-    position: relative;
     overflow: hidden;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 3px;
     border: none;
     color: white;
     padding: 5px 24px;
@@ -52,26 +52,6 @@
     z-index: 14;
 }
 
-.button:hover::after {
-    animation: blink 0.35s ease; /*https://html5book.ru/css3-animation/*/
-}
-
-.button:hover::before {
-    display: block;
-    content: '';
-    position: absolute;
-
-    left: -100vw;
-    top: 0;
-    height: 100vh;
-    width: 300vw;
-
-    background-color: #fff;
-    opacity: 0.2;
-
-    z-index: 7;
-}
-
 .default:hover {
     background: #0080ff;
 }
@@ -81,7 +61,6 @@
 }
 
 .button:focus {
-
 }
 
 .default:active {
@@ -93,13 +72,5 @@
 }
 
 .button:disabled {
-    cursor: no-drop;
-}
-
-.button:disabled::after {
-    z-index: -1;
-}
-
-.button:disabled::before {
-    z-index: -1;
+    cursor: default;
 }
