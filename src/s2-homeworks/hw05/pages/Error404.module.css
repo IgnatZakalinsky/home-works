@@ -1,9 +1,6 @@
 .error404 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 200px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 244px;
+    width: 451px;
+    height: 100%;
 }
 
 .wrapper {
