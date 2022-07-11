@@ -11,11 +11,16 @@ type GreetingContainerPropsType = {
 // function GreetingContainer(props: GreetingPropsType) {
 
 // более современный и удобный для про :)
-const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
+const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
+    users,
+    addUserCallback,
+}) => {
+    // деструктуризация пропсов
     const [name, setName] = useState<string>('') // need to fix any
     const [error, setError] = useState<string>('') // need to fix any
 
-    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any // нельзя пробелы перед и после имени, можно в середине
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
+        // need to fix any // нельзя пробелы перед и после имени, можно в середине
         setName(e.currentTarget.value) // need to fix
         error && setError('')
     }

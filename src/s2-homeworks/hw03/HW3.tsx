@@ -6,14 +6,15 @@ import GreetingContainer from './GreetingContainer'
 
 // types
 export type UserType = {
-    _id: string// need to fix any
+    _id: string // need to fix any
     name: string // need to fix any
 }
 
 const HW3 = () => {
     const [users, setUsers] = useState<UserType[]>([]) // need to fix any
 
-    const addUserCallback = (name: string) => { // need to fix any
+    const addUserCallback = (name: string) => {
+        // need to fix any
         const user = {
             _id: v1(),
             name,
@@ -30,11 +31,13 @@ const HW3 = () => {
 
             {/*для автоматической проверки дз (не менять)*/}
 
-
-            <hr/>
+            <hr />
             {/*можно убрать этот тег*/}
-            <GreetingContainer users={users} addUserCallback={addUserCallback}/>
-            <hr/>
+            <GreetingContainer
+                users={users}
+                addUserCallback={addUserCallback}
+            />
+            <hr />
             {/*можно убрать этот тег*/}
         </div>
     )

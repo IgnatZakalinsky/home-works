@@ -1,37 +1,37 @@
 .select {
-   width: 100px;
-   padding: 5px;
-   cursor: pointer;
-   appearance: none;
-   background-color: var(--primary);
-   background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
-      linear-gradient(135deg, currentColor 50%, transparent 50%);
-   background-position: calc(100% - 20px) calc(1px + 50%),
-      calc(100% - 16px) calc(1px + 50%);
-   background-size: 4px 4px, 4px 4px;
-   background-repeat: no-repeat;
-   border-radius: 2px;
-   border: 2px solid var(--primary);
-   color: var(--primary-content);
+    width: 100px;
+    padding: 5px;
+    cursor: pointer;
+    appearance: none;
+    background-color: var(--primary);
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+        linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1px + 50%),
+        calc(100% - 16px) calc(1px + 50%);
+    background-size: 4px 4px, 4px 4px;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    border: 2px solid var(--primary);
+    color: var(--primary-content);
 }
 
 .select:focus {
-   outline: none;
+    outline: none;
 }
 
 .option {
-   /*padding: 30px;*/
-   color: var(--primary-content);
-   background: var(--primary);
+    /*padding: 30px;*/
+    color: var(--primary-content);
+    background: var(--primary);
 }
 
 .option:checked {
-   color: var(--secondary-content);
-   background: var(--primary);
+    color: var(--secondary-content);
+    background: var(--primary);
 }
 
 .option:hover {
-   box-shadow: 0 0 10px 100px #fed20f inset;
-   transition: all 0.2s ease-in-out;
-   background: red;
+    box-shadow: 0 0 10px 100px #fed20f inset;
+    transition: all 0.2s ease-in-out;
+    background: red;
 }

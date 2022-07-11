@@ -1,19 +1,23 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
-import {restoreState} from '../hw06/localStorage/localStorage'
+import { restoreState } from '../hw06/localStorage/localStorage'
 
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
-    const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', 0))) // for autotests
+    const [date, setDate] = useState<Date>(
+        new Date(restoreState('hw9-date', 0))
+    ) // for autotests
     const [show, setShow] = useState<boolean>(false)
 
-    const stop = () => { // пишут студенты
+    const stop = () => {
+        // пишут студенты
         if (timerId) {
             clearInterval(timerId)
             setTimerId(undefined)
         }
     }
-    const start = () => { // пишут студенты
+    const start = () => {
+        // пишут студенты
         const id: number = +setInterval(() => {
             setDate(new Date())
         }, 1000)
@@ -28,11 +32,11 @@ function Clock() {
     }
 
     // логику напишет Андрей :)                                                                     // |v| видел такое в реальных часах |v|
-    const stringTime = date?.toLocaleTimeString() || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = date?.toLocaleDateString() || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringTime = date?.toLocaleTimeString() || <br /> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringDate = date?.toLocaleDateString() || <br /> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
     // день недели на английском, месяц на английском
-    const stringDay = 'Monday' || <br/> // пишут студенты
-    const stringMonth = 'May' || <br/> // пишут студенты
+    const stringDay = 'Monday' || <br /> // пишут студенты
+    const stringMonth = 'May' || <br /> // пишут студенты
 
     return (
         <div>
@@ -53,12 +57,11 @@ function Clock() {
                     </>
                 ) : (
                     <>
-                        <br/>
-                        <br/>
+                        <br />
+                        <br />
                     </>
                 )}
             </div>
-
 
             <SuperButton
                 id={'hw9-button-start'}

@@ -9,28 +9,27 @@ type PropsType = {
     handleClose: () => void
 }
 
-export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
+export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
     return (
         <>
             {/*бэкграунд справа от открытого меню*/}
-            {open && <div className={s.background} onClick={handleClose}/>}
+            {open && <div className={s.background} onClick={handleClose} />}
 
             <aside className={`${s.sidebar} ${open ? s.open : ''}`}>
                 <button className={s.close} onClick={handleClose}>
                     <img
                         src={closeIcon}
-                        alt='close sidebar'
+                        alt="close sidebar"
                         id={'hw5-menu-close'}
                     />
                 </button>
 
                 <nav id={'hw5-menu'} className={s.nav}>
-
                     <NavLink
                         id={'hw5-pre-junior-link'}
                         to={PATH.PRE_JUNIOR}
                         onClick={handleClose}
-                        className={({isActive}) => isActive ? s.active : ''} // делает студент
+                        className={({ isActive }) => (isActive ? s.active : '')} // делает студент
                     >
                         Pre-junior
                     </NavLink>
@@ -38,7 +37,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-link'}
                         to={PATH.JUNIOR}
                         onClick={handleClose}
-                        className={({isActive}) => isActive ? s.active : ''} // делает студент
+                        className={({ isActive }) => (isActive ? s.active : '')} // делает студент
                     >
                         Junior
                     </NavLink>
@@ -46,14 +45,12 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-plus-link'}
                         to={PATH.JUNIOR_PLUS}
                         onClick={handleClose}
-                        className={({isActive}) => isActive ? s.active : ''} // делает студент
+                        className={({ isActive }) => (isActive ? s.active : '')} // делает студент
                     >
                         Junior+
                     </NavLink>
-
                 </nav>
             </aside>
         </>
     )
 }
-

@@ -14,13 +14,24 @@ type GreetingPropsType = {
 
 // презентационная компонента (для верстальщика)
 const Greeting: React.FC<GreetingPropsType> = (
-    {name, setNameCallback, addUser, onEnter, error, totalUsers, lastUser, onBlur} // деструктуризация пропсов
+    {
+        name,
+        setNameCallback,
+        addUser,
+        onEnter,
+        error,
+        totalUsers,
+        lastUser,
+        onBlur,
+    } // деструктуризация пропсов
 ) => {
     const inputClass = error ? `${s.input} ${s.errorInput}` : s.input // need to fix with (?:)
 
     return (
         <div id={'hw3-form'} className={s.greetingForm}>
-            <div id={'hw3-users-total'} className={s.count}>{totalUsers}</div>
+            <div id={'hw3-users-total'} className={s.count}>
+                {totalUsers}
+            </div>
             <div className={s.inputAndButtonContainer}>
                 <div>
                     <input
@@ -31,18 +42,24 @@ const Greeting: React.FC<GreetingPropsType> = (
                         onKeyDown={onEnter}
                         onBlur={onBlur}
                     />
-                    <div id={'hw3-error'} className={s.error}>{error}</div>
+                    <div id={'hw3-error'} className={s.error}>
+                        {error}
+                    </div>
                 </div>
 
-                <button id={'hw3-button'} onClick={addUser} className={s.button} disabled={!name}>add</button>
-
+                <button
+                    id={'hw3-button'}
+                    onClick={addUser}
+                    className={s.button}
+                    disabled={!name}
+                >
+                    add
+                </button>
             </div>
 
             {lastUser && (
                 <div className={s.greeting}>
-                    hello{' '}
-                    <span id={'hw3-last-user'}>{lastUser}</span>
-                    !
+                    hello <span id={'hw3-last-user'}>{lastUser}</span>!
                 </div>
             )}
         </div>

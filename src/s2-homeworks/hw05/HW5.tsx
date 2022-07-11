@@ -8,7 +8,7 @@ function HW5() {
         <HashRouter>
             {/*в gh-pages лучше работает HashRouter*/}
             <Layout>
-                <Pages/>
+                <Pages />
             </Layout>
         </HashRouter>
     )

@@ -1,61 +1,61 @@
 .greetingForm {
-   display: flex;
-   flex-direction: column;
-   padding: 31px 0 0 70px;
-   height: 336px;
+    display: flex;
+    flex-direction: column;
+    padding: 31px 0 0 70px;
+    height: 336px;
 }
 
 .inputAndButtonContainer {
-   display: flex;
-   gap: 24px;
-   margin-bottom: 22px;
+    display: flex;
+    gap: 24px;
+    margin-bottom: 22px;
 }
 
 .error {
-   margin-top: 7px;
-   color: #cc0000;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 400;
-   font-size: 14px;
-   line-height: 17px;
+    margin-top: 7px;
+    color: #cc0000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 .input {
-   border: 1px solid #d1d1d1;
-   border-radius: 5px;
-   width: 370px;
-   font-family: 'Montserrat', sans-serif;
-   font-style: normal;
-   font-weight: 500;
-   font-size: 16px;
-   line-height: 20px;
-   padding: 8px 0 8px 12px;
-   color: #000;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    width: 370px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 8px 0 8px 12px;
+    color: #000;
 }
 
 .input:focus {
-   outline: none;
-   border: 1px solid #06c;
+    outline: none;
+    border: 1px solid #06c;
 }
 
 .errorInput {
-   border: 1px solid #cc0000;
+    border: 1px solid #cc0000;
 }
 
 .button {
-   margin-left: 12px;
-   background: #06c;
-   color: white;
-   border: none;
-   border-radius: 3px;
-   outline: none;
-   padding: 8px 24px;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 600;
-   font-size: 14px;
-   line-height: 20px;
-   cursor: pointer;
-   height: 36px;
+    margin-left: 12px;
+    background: #06c;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    padding: 8px 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    height: 36px;
 }
 
 .button:focus {
@@ -65,16 +65,16 @@
 }
 
 .button:disabled {
-   opacity: 0.5;
-   cursor: default;
+    opacity: 0.5;
+    cursor: default;
 }
 
 .count {
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 400;
-   font-size: 14px;
-   line-height: 17px;
-   margin-bottom: 9px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 9px;
 }
 
 .greeting {
