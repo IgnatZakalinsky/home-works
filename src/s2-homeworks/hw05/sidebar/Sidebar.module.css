@@ -8,7 +8,7 @@
     top: 0;
     transition: 0.2s ease-in;
     width: 317px;
-    z-index: 2;
+    z-index: 20;
 }
 
 .sidebar.open {
@@ -27,7 +27,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 1;
+    z-index: 10;
 }
 
 .nav {
@@ -54,8 +54,8 @@
 
 .nav a.active {
     color: #0059b2;
+    text-decoration: underline;
 }
-
 .close {
     background-color: transparent;
     border: none;
