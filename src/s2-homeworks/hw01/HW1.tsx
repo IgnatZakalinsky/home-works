@@ -34,13 +34,13 @@ export const friendMessage0: MessageType = {
 
 const HW1 = () => {
     return (
-        <div id={'hw1'} className={s2.hw}>
+        <div id={'hw1'}>
             {/*<hr/>*/}
             {/*можно убрать этот тег*/}
 
             <div className={s2.hwTitle}>Homework #1</div>
-            <hr />
-            <div className={s2.hwContainer}>
+            {/*<hr />*/}
+            <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
                 <div>
                     <Message message={message0} />
@@ -55,7 +55,7 @@ const HW1 = () => {
 
             {/*<hr/>*/}
             {/*можно убрать этот тег*/}
-            <hr />
+            {/*<hr />*/}
             {/*можно убрать этот тег*/}
         </div>
     )

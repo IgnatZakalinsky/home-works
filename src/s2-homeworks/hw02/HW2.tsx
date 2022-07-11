@@ -48,24 +48,25 @@ function HW2() {
         setAffairs(deleteAffair(affairs, _id)) // need to fix any // number
 
     return (
-        <div id={'hw2'} className={s2.hw} style={{ marginTop: '39px' }}>
+        <div id={'hw2'}>
             {/*<hr/>*/}
             {/*можно убрать этот тег*/}
 
             <div className={s2.hwTitle}>Homework #2</div>
-            <hr />
-
+            {/*<hr />*/}
+            <div className={s2.hw}>
+                <Affairs
+                    data={filteredAffairs}
+                    setFilter={setFilter}
+                    deleteAffairCallback={deleteAffairCallback}
+                    filter={filter}
+                />
+            </div>
             {/*не менять*/}
-            <Affairs
-                data={filteredAffairs}
-                setFilter={setFilter}
-                deleteAffairCallback={deleteAffairCallback}
-                filter={filter}
-            />
 
             {/*<hr/>*/}
             {/*можно убрать этот тег*/}
-            <hr />
+            {/*<hr/>*/}
             {/*можно убрать этот тег*/}
         </div>
     )

@@ -17,10 +17,10 @@ const HW6 = () => {
 
     return (
         <div id={'hw6'} className={s2.hw}>
-            <hr />
+            {/*<hr />*/}
             {/*можно убрать этот тег*/}
 
-            <div className={s2.hwTitle}>homeworks 6</div>
+            <div className={s2.hwTitle}>Homeworks #6</div>
 
             {/*should work (должно работать)*/}
             <div>

@@ -4,14 +4,14 @@ import Stand from './Stand'
 
 const HW4 = () => {
     return (
-        <div id={'hw4'} className={s2.hw}>
-            {/*можно убрать этот тег*/}
-
+        <div id={'hw4'}>
             <div className={s2.hwTitle}>Homework #4</div>
-            <hr />
+            {/*<hr />*/}
             {/*проверка отображения*/}
             {/*демонстрация возможностей компонент:*/}
-            <Stand />
+            <div className={s2.hw}>
+                <Stand />
+            </div>
 
             <hr />
             {/*можно убрать этот тег*/}

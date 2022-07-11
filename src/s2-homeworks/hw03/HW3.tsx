@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { v1 } from 'uuid'
+import React, {useState} from 'react'
+import {v1} from 'uuid'
 import s from './Greeting.module.css'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
@@ -23,7 +23,7 @@ const HW3 = () => {
     }
 
     return (
-        <div id={'hw3'} className={s2.hw}>
+        <div id={'hw3'}>
             {/*<hr/>*/}
             {/*можно убрать этот тег*/}
 
@@ -31,13 +31,16 @@ const HW3 = () => {
 
             {/*для автоматической проверки дз (не менять)*/}
 
-            <hr />
+            {/*<hr />*/}
             {/*можно убрать этот тег*/}
-            <GreetingContainer
-                users={users}
-                addUserCallback={addUserCallback}
-            />
-            <hr />
+            <div className={s2.hw}>
+                <GreetingContainer
+                    users={users}
+                    addUserCallback={addUserCallback}
+                />
+            </div>
+
+            {/*<hr />*/}
             {/*можно убрать этот тег*/}
         </div>
     )

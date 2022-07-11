@@ -1,7 +1,6 @@
 .greetingForm {
     display: flex;
     flex-direction: column;
-    padding: 31px 0 0 70px;
     height: 336px;
 }
 

@@ -58,7 +58,7 @@ function Affairs(props: AffairsPropsType) {
     // }
 
     return (
-        <div className={s.container}>
+        <div>
             <div className={s.buttonContainer}>
                 <button
                     id={'hw2-button-all'}
