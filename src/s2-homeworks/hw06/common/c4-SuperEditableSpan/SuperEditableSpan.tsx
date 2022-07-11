@@ -6,7 +6,7 @@ import React, {
 } from 'react'
 import s from './SuperEditableSpan.module.css'
 import SuperInputText from '../../../hw04/common/c1-SuperInputText/SuperInputText'
-
+import editIcon from './editIcon.svg'
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,
@@ -77,7 +77,13 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = ({
                     {...restSpanProps}
                 >
                     {/*если нет захардкодженного текста для спана, то значение инпута*/}
-                    ✎ {children || restProps.value}
+                    <img
+                        src={editIcon}
+                        width={'24px'}
+                        height={'24px'}
+                        alt={'edit'}
+                    />{' '}
+                    {children || restProps.value}
                 </span>
             )}
         </>

@@ -64,7 +64,7 @@
     height: 100%;
     background-color: #06c;
     box-shadow: 0 5px 20px rgba(29, 33, 38, 0.03),
-        0 1px 2px rgba(29, 33, 38, 0.1);
+    0 1px 2px rgba(29, 33, 38, 0.1);
     display: flex;
     flex-direction: column;
     margin-right: 20px;
@@ -123,7 +123,7 @@
     box-sizing: border-box;
     background: #f5f7fb;
     box-shadow: 0 5px 20px rgba(29, 33, 38, 0.03),
-        0 1px 2px rgba(29, 33, 38, 0.1);
+    0 1px 2px rgba(29, 33, 38, 0.1);
     border-radius: 20px;
     width: 100%;
     border: none;
@@ -162,7 +162,7 @@
     text-align: center;
 }
 
-img {
+.imageAndMessage img {
     border-radius: 50%;
     width: 48px;
     height: 48px;

@@ -3,6 +3,7 @@ import SuperEditableSpan from './common/c4-SuperEditableSpan/SuperEditableSpan'
 import { restoreState, saveState } from './localStorage/localStorage'
 import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
+import s from './HW6.module.css'
 
 const HW6 = () => {
     const [value, setValue] = useState<string>('')
@@ -16,34 +17,40 @@ const HW6 = () => {
     }
 
     return (
-        <div id={'hw6'} className={s2.hw}>
+        <div id={'hw6'}>
             {/*<hr />*/}
             {/*можно убрать этот тег*/}
-
-            <div className={s2.hwTitle}>Homeworks #6</div>
+            <div className={s2.hwTitle}>Homework #6</div>
 
             {/*should work (должно работать)*/}
-            <div>
-                <SuperEditableSpan
-                    id={'hw6-spanable-input'}
-                    value={value}
-                    onChangeText={setValue}
-                    spanProps={{
-                        children: value ? undefined : 'enter text...',
-                        id: 'hw6-editable-span',
-                    }}
-                />
+            <div className={s2.hw}>
+                <div>
+                    <SuperEditableSpan
+                        id={'hw6-spanable-input'}
+                        value={value}
+                        onChangeText={setValue}
+                        spanProps={{
+                            children: value ? undefined : 'enter text...',
+                            id: 'hw6-editable-span',
+                        }}
+                    />
+                </div>
+                <div className={s.buttonsContainer}>
+                    <SuperButton id={'hw6-save'} onClick={save}>
+                        save to ls
+                    </SuperButton>
+                    <SuperButton
+                        id={'hw6-restore'}
+                        onClick={restore}
+                        xType={'secondary'}
+                    >
+                        get from ls
+                    </SuperButton>
+                </div>
             </div>
-            <SuperButton id={'hw6-save'} onClick={save}>
-                save to ls
-            </SuperButton>
-            <SuperButton id={'hw6-restore'} onClick={restore}>
-                get from ls
-            </SuperButton>
-
-            <hr />
+            {/*<hr />*/}
             {/*можно убрать этот тег*/}
-            <hr />
+            {/*<hr />*/}
             {/*можно убрать этот тег*/}
         </div>
     )
