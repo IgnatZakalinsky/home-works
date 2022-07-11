@@ -1,7 +1,6 @@
 .greetingForm {
     display: flex;
     flex-direction: column;
-    height: 336px;
 }
 
 .inputAndButtonContainer {
