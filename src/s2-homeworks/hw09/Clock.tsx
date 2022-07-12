@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import { restoreState } from '../hw06/localStorage/localStorage'
+import s from './Clock.module.css'
 
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
     const [date, setDate] = useState<Date>(
-        new Date(restoreState('hw9-date', 0))
+        new Date(restoreState('hw9-date', new Date()))
     ) // for autotests
     const [show, setShow] = useState<boolean>(false)
 
@@ -35,48 +36,59 @@ function Clock() {
     const stringTime = date?.toLocaleTimeString() || <br /> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = date?.toLocaleDateString() || <br /> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
     // день недели на английском, месяц на английском
-    const stringDay = 'Monday' || <br /> // пишут студенты
-    const stringMonth = 'May' || <br /> // пишут студенты
+
+    const stringDay = new Intl.DateTimeFormat('en-US', {
+        weekday: 'long',
+    }).format(date) || <br /> // пишут студенты
+    const stringMonth = new Intl.DateTimeFormat('en-US', {
+        month: 'long',
+    }).format(date) || <br /> // пишут студенты
 
     return (
-        <div>
+        <div className={s.clock}>
             <div
                 id={'hw9-watch'}
+                className={s.watch}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
             >
-                <div id={'hw9-day'}>{stringDay}</div>
-                <div id={'hw9-time'}>{stringTime}</div>
+                <span id={'hw9-day'}>{stringDay}</span>,{' '}
+                <span id={'hw9-time'}>
+                    <strong>{stringTime}</strong>
+                </span>
             </div>
 
             <div id={'hw9-more'}>
-                {show ? (
-                    <>
-                        <div id={'hw9-month'}>{stringMonth}</div>
-                        <div id={'hw9-date'}>{stringDate}</div>
-                    </>
-                ) : (
-                    <>
-                        <br />
-                        <br />
-                    </>
-                )}
+                <div className={s.more}>
+                    {show ? (
+                        <>
+                            <span id={'hw9-month'}>{stringMonth}</span>,{' '}
+                            <span id={'hw9-date'}>{stringDate}</span>
+                        </>
+                    ) : (
+                        <>
+                            <br />
+                        </>
+                    )}
+                </div>
             </div>
 
-            <SuperButton
-                id={'hw9-button-start'}
-                disabled={!!timerId} // пишут студенты
-                onClick={start}
-            >
-                start
-            </SuperButton>
-            <SuperButton
-                id={'hw9-button-stop'}
-                disabled={!timerId} // пишут студенты
-                onClick={stop}
-            >
-                stop
-            </SuperButton>
+            <div className={s.buttonsContainer}>
+                <SuperButton
+                    id={'hw9-button-start'}
+                    disabled={!!timerId} // пишут студенты
+                    onClick={start}
+                >
+                    start
+                </SuperButton>
+                <SuperButton
+                    id={'hw9-button-stop'}
+                    disabled={!timerId} // пишут студенты
+                    onClick={stop}
+                >
+                    stop
+                </SuperButton>
+            </div>
         </div>
     )
 }
