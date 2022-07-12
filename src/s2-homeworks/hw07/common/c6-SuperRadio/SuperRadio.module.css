@@ -19,6 +19,7 @@
     transform: scale(0);
     transition: 120ms transform ease-in-out;
     background-color: black;
+    z-index: -1;
 }
 
 
