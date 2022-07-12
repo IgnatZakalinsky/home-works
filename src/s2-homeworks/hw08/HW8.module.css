@@ -1,7 +1,44 @@
 .item {
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
+    height: 48px;
+    border-bottom: 1px solid #E5E5E5;;
+}
 
-    margin-left: 10px;
+.item:last-of-type {
+    border-bottom: none;
+}
+
+.users {
+    border-collapse: collapse;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 12px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: max-content;
+    gap: 20px;
+}
+
+.thead {
+    padding-left: 17px;
+    background-color: #E5E5E5;
+    border: none;
+    height: 36px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.nameCol {
+    width: 297px;
+    padding-left: 17px;
+}
+
+.ageCol {
+    width: 284px;
 }

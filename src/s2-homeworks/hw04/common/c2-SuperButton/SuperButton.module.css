@@ -19,7 +19,7 @@
     overflow: hidden;
     cursor: pointer;
     border-radius: 3px;
-    border: none;
+    border: 1px solid #0066CC;
     color: white;
     padding: 5px 24px;
     font-family: 'Montserrat', sans-serif;
