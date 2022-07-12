@@ -49,11 +49,7 @@ function HW2() {
 
     return (
         <div id={'hw2'}>
-            {/*<hr/>*/}
-            {/*можно убрать этот тег*/}
-
             <div className={s2.hwTitle}>Homework #2</div>
-            {/*<hr />*/}
             <div className={s2.hw}>
                 <Affairs
                     data={filteredAffairs}
@@ -63,11 +59,6 @@ function HW2() {
                 />
             </div>
             {/*не менять*/}
-
-            {/*<hr/>*/}
-            {/*можно убрать этот тег*/}
-            {/*<hr/>*/}
-            {/*можно убрать этот тег*/}
         </div>
     )
 }

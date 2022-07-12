@@ -35,16 +35,11 @@ export const friendMessage0: MessageType = {
 const HW1 = () => {
     return (
         <div id={'hw1'}>
-            {/*<hr/>*/}
-            {/*можно убрать этот тег*/}
-
             <div className={s2.hwTitle}>Homework #1</div>
-            {/*<hr />*/}
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
                 <div>
                     <Message message={message0} />
-
                     {/*не обязательно*/}
                     <FriendMessage message={friendMessage0} />
                 </div>
@@ -52,11 +47,6 @@ const HW1 = () => {
                 {/*для автоматической проверки дз (не менять)*/}
                 <MessageSender M={Message} />
             </div>
-
-            {/*<hr/>*/}
-            {/*можно убрать этот тег*/}
-            {/*<hr />*/}
-            {/*можно убрать этот тег*/}
         </div>
     )
 }

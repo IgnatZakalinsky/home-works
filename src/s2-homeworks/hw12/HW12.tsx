@@ -22,9 +22,6 @@ const HW12 = () => {
 
     return (
         <div id={'hw12'} className={s2.hw + ' ' + s[theme]}>
-            <hr />
-            {/*можно убрать этот тег*/}
-
             <div
                 id={'hw12-text'}
                 className={s2.hwTitle + ' ' + s[theme + '-text']}
@@ -37,11 +34,6 @@ const HW12 = () => {
                 options={themes}
                 onChangeOption={change}
             />
-
-            <hr />
-            {/*можно убрать этот тег*/}
-            <hr />
-            {/*можно убрать этот тег*/}
         </div>
     )
 }

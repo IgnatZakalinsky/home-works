@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import axios from 'axios'
+
 axios.interceptors.response.use(
     (response) => response,
     (error) => {
@@ -39,9 +40,6 @@ const HW13 = () => {
 
     return (
         <div id={'hw13'} className={s2.hw}>
-            <hr />
-            {/*можно убрать этот тег*/}
-
             <div className={s2.hwTitle}>homeworks 13</div>
 
             {/*для автоматической проверки дз (не менять)*/}
@@ -76,11 +74,6 @@ const HW13 = () => {
 
             <div id={'hw13-answer'}>{answer}</div>
             <div id={'hw13-info'}>{info}</div>
-
-            <hr />
-            {/*можно убрать этот тег*/}
-            <hr />
-            {/*можно убрать этот тег*/}
         </div>
     )
 }

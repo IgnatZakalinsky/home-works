@@ -43,9 +43,6 @@ const HW8 = () => {
 
     return (
         <div id={'hw3'} className={s2.hw}>
-            <hr />
-            {/*можно убрать этот тег*/}
-
             <div className={s2.hwTitle}>homeworks 8</div>
 
             <div id={'hw8-users'}>{finalPeople}</div>
@@ -61,11 +58,6 @@ const HW8 = () => {
                     check 18
                 </SuperButton>
             </div>
-
-            <hr />
-            {/*можно убрать этот тег*/}
-            <hr />
-            {/*можно убрать этот тег*/}
         </div>
     )
 }

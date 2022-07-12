@@ -18,8 +18,6 @@ const HW6 = () => {
 
     return (
         <div id={'hw6'}>
-            {/*<hr />*/}
-            {/*можно убрать этот тег*/}
             <div className={s2.hwTitle}>Homework #6</div>
 
             {/*should work (должно работать)*/}
@@ -48,10 +46,6 @@ const HW6 = () => {
                     </SuperButton>
                 </div>
             </div>
-            {/*<hr />*/}
-            {/*можно убрать этот тег*/}
-            {/*<hr />*/}
-            {/*можно убрать этот тег*/}
         </div>
     )
 }

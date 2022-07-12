@@ -22,9 +22,6 @@ function HW11() {
 
     return (
         <div id={'hw11'} className={s2.hw}>
-            <hr />
-            {/*можно убрать этот тег*/}
-
             <div className={s2.hwTitle}>homeworks 11</div>
 
             {/*should work (должно работать)*/}
@@ -62,11 +59,6 @@ function HW11() {
                     {value2}
                 </span>
             </div>
-
-            <hr />
-            {/*можно убрать этот тег*/}
-            <hr />
-            {/*можно убрать этот тег*/}
         </div>
     )
 }

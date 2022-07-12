@@ -15,9 +15,6 @@ const HW7 = () => {
 
     return (
         <div id={'hw7'} className={s2.hw}>
-            <hr />
-            {/*можно убрать этот тег*/}
-
             <div className={s2.hwTitle}>homeworks 7</div>
 
             {/*should work (должно работать)*/}
@@ -38,11 +35,6 @@ const HW7 = () => {
                     onChangeOption={onChangeOption}
                 />
             </div>
-
-            <hr />
-            {/*можно убрать этот тег*/}
-            <hr />
-            {/*можно убрать этот тег*/}
         </div>
     )
 }
