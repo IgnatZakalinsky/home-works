@@ -7,7 +7,6 @@ import HW13 from '../../hw13/HW13'
 function JuniorPlus() {
     return (
         <div id={'hw5-page-junior-plus'}>
-            junior plus page
             <HW10 />
             <HW11 />
             <HW12 />
