@@ -1,18 +1,19 @@
 .select {
-    width: 100px;
-    padding: 5px;
+    padding-left: 10px;
+    width: 165px;
+    height: 24px;
     cursor: pointer;
     appearance: none;
-    background-color: var(--primary);
-    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
-        linear-gradient(135deg, currentColor 50%, transparent 50%);
-    background-position: calc(100% - 20px) calc(1px + 50%),
-        calc(100% - 16px) calc(1px + 50%);
-    background-size: 4px 4px, 4px 4px;
+    background-color: transparent;
+    background-image: url('./chevron-down.svg');
+    background-position: right center;
     background-repeat: no-repeat;
     border-radius: 2px;
-    border: 2px solid var(--primary);
-    color: var(--primary-content);
+    border: 1px solid #C2C2C2;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 .select:focus {
