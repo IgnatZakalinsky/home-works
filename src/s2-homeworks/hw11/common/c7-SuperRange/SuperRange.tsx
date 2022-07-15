@@ -1,47 +1,41 @@
-import React, {
-    ChangeEvent,
-    DetailedHTMLProps,
-    InputHTMLAttributes,
-} from 'react'
-import s from './SuperRange.module.css'
+import React from 'react'
+import { Slider, SliderProps } from '@mui/material'
 
-// тип пропсов обычного инпута
-type DefaultInputPropsType = DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
->
-
-// здесь мы говорим что у нашего инпута будут такие же пропсы как у обычного инпута
+// здесь мы говорим что у нашего слайдера будут такие же пропсы как у обычного mui слайдера
 // (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
-type SuperRangePropsType = DefaultInputPropsType & {
-    // и + ещё пропсы которых нет в стандартном инпуте
-    onChangeRange?: (value: number) => void
-}
+type SuperRangePropsType = SliderProps
 
 const SuperRange: React.FC<SuperRangePropsType> = ({
-    type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
-    onChange,
-    onChangeRange,
-    className,
-
     ...restProps // все остальные пропсы попадут в объект restProps
 }) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange && onChange(e) // сохраняем старую функциональность
-
-        onChangeRange && onChangeRange(+e.currentTarget.value)
-    }
-
-    const finalRangeClassName = `${s.range} ${className ? className : ''}`
-
-    // взять одинарный ползунок из материал-юай и повесить на него ид
     return (
         <>
-            <input
+            <Slider
                 id={'hw11-single-slider'}
-                type={'range'}
-                onChange={onChangeCallback}
-                className={finalRangeClassName}
+                sx={{
+                    width: '160px',
+                    color: '#00CC22',
+                    '& .MuiSlider-track': {
+                        border: 'none',
+                    },
+                    '& .MuiSlider-thumb': {
+                        width: 20,
+                        height: 20,
+                        border: '1px solid #00CC22',
+                        backgroundColor: '#fff',
+                        '&:before': {
+                            content: '""',
+                            width: '6px',
+                            height: '6px',
+                            borderRadius: '50%',
+                            backgroundColor: '#00CC22',
+                            zIndex: -1,
+                        },
+                        '&:hover, &.Mui-focusVisible, &.Mui-active': {
+                            boxShadow: 'none',
+                        },
+                    },
+                }}
                 {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
             />
         </>
