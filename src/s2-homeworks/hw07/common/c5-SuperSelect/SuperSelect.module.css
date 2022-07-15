@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
     border-radius: 2px;
     border: 1px solid #C2C2C2;
-    color: #000000;
+    color: inherit;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -20,16 +20,6 @@
     outline: none;
 }
 
-.option {
-    /*padding: 30px;*/
-    color: var(--primary-content);
-    background: var(--primary);
-}
-
-.option:checked {
-    color: var(--secondary-content);
-    background: var(--primary);
-}
 
 .option:hover {
     box-shadow: 0 0 10px 100px #fed20f inset;
