@@ -22,12 +22,13 @@ const defaultAffairs: any = [ // need to fix any
 
 // pure helper functions
 export const filterAffairs = (affairs: any, filter: any): any => { // need to fix any
+    if (filter !== 'all') return affairs.filter((a: AffairType) => a.priority === filter)
 
     return affairs // need to fix
 }
 export const deleteAffair = (affairs: any, _id: any): any => { // need to fix any
 
-    return affairs // need to fix
+    return affairs.filter((a: AffairType) => a._id !== _id) // need to fix
 }
 
 function HW2() {
