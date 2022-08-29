@@ -1,26 +1,16 @@
-import React, { SetStateAction, Dispatch } from 'react'
+import React from 'react'
 import Affair from './Affair'
 import { AffairType, FilterType } from './HW2'
 import s from './Affairs.module.css'
 
 type AffairsPropsType = {
-    // need to fix any
-    data: any // AffairType[]
-    setFilter: any // (filter: FilterType) => void
-    // setFilter: Dispatch<SetStateAction<FilterType>>
-    deleteAffairCallback: any // (id: number) => void
-    filter: any // FilterType
+    data: any // need to fix any
+    setFilter: any
+    deleteAffairCallback: any
+    filter: FilterType
 }
 
 function Affairs(props: AffairsPropsType) {
-    const mappedAffairs = props.data.map((a: AffairType) => (
-        <Affair
-            key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
-            affair={a}
-            deleteAffairCallback={props.deleteAffairCallback}
-        />
-    ))
-
     const setAll = () => {
         props.setFilter('all') // создаёт студент
     } // need to fix
@@ -33,9 +23,6 @@ function Affairs(props: AffairsPropsType) {
     const setLow = () => {
         props.setFilter('low') // создаёт студент
     }
-    // const set = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    //     props.setFilter(e.currentTarget.value as FilterType)
-    // }
 
     const cnAll =
         s.button + ' ' + s.all + ' ' + (props.filter === 'all' ? s.active : '')
@@ -53,9 +40,14 @@ function Affairs(props: AffairsPropsType) {
         (props.filter === 'middle' ? s.active : '')
     const cnLow =
         s.button + ' ' + s.low + ' ' + (props.filter === 'low' ? s.active : '')
-    // const setClass = (filter: FilterType) => {
-    //     return s.button + (props.filter === filter ? ' ' + s.active : '')
-    // }
+
+    const mappedAffairs = props.data.map((a: AffairType) => (
+        <Affair
+            key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
+            affair={a}
+            deleteAffairCallback={props.deleteAffairCallback}
+        />
+    ))
 
     return (
         <div>
@@ -90,10 +82,6 @@ function Affairs(props: AffairsPropsType) {
                 </button>
             </div>
             <div className={s.affairs}>{mappedAffairs}</div>
-            {/*<button onClick={set} className={setClass('all')} value={'all'}>All</button>*/}
-            {/*<button onClick={set} className={setClass('high')} value={'high'}>High</button>*/}
-            {/*<button onClick={set} className={setClass('middle')} value={'middle'}>Middle</button>*/}
-            {/*<button onClick={set} className={setClass('low')} value={'low'}>Low</button>*/}
         </div>
     )
 }

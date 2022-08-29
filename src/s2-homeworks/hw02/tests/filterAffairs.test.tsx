@@ -10,13 +10,12 @@ beforeEach(() => {
         { _id: 3, name: 'games', priority: 'low' },
         { _id: 4, name: 'work', priority: 'high' },
         { _id: 5, name: 'html & css', priority: 'middle' },
-        { _id: 6, name: 'porn', priority: 'low' },
     ]
 })
 
 test('filter by all', () => {
     const newState = filterAffairs(initialState, 'all')
-    expect(newState.length).toBe(6)
+    expect(newState.length).toBe(5)
 })
 test('filter by high', () => {
     const newState = filterAffairs(initialState, 'high')
@@ -28,5 +27,5 @@ test('filter by middle', () => {
 })
 test('filter by low', () => {
     const newState = filterAffairs(initialState, 'low')
-    expect(newState.length).toBe(3)
+    expect(newState.length).toBe(2)
 })

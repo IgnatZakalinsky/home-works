@@ -1,20 +1,18 @@
 import React, { useState } from 'react'
 import Affairs from './Affairs'
-import s from './Affairs.module.css'
 import s2 from '../../s1-main/App.module.css'
 
 // types
-export type AffairPriorityType = any // 'high' | 'low' | 'middle' // need to fix any
+export type AffairPriorityType = any // need to fix any
 export type AffairType = {
-    _id: any // number // need to fix any
-    name: any // string // need to fix any
+    _id: any // need to fix any
+    name: any // need to fix any
     priority: AffairPriorityType
 }
 export type FilterType = 'all' | AffairPriorityType
 
 // constants
-const defaultAffairs: any = [
-    // need to fix any // AffairType[]
+const defaultAffairs: any = [ // need to fix any
     { _id: 1, name: 'React', priority: 'high' }, // студенты могут изменить содержимое name и количество элементов в массиве, ...priority не менять!
     { _id: 2, name: 'anime', priority: 'low' },
     { _id: 3, name: 'games', priority: 'low' },
@@ -23,29 +21,22 @@ const defaultAffairs: any = [
 ]
 
 // pure helper functions
-export const filterAffairs = (affairs: any, filter: any): any => {
-    // need to fix any // (affairs: AffairType[], filter: FilterType): AffairType[]
-    if (filter === 'all') return affairs // создаёт студент
-    // else if (filter === 'low') return affairs.filter(a => a.priority === 'low')
-    // else if (filter === 'middle') return affairs.filter(a => a.priority === 'middle')
-    // else if (filter === 'high') return affairs.filter(a => a.priority === 'high')
-    // else {
-    // }
-    // return []
-    else return affairs.filter((a: any) => a.priority === filter) // need to fix // создаёт студент
+export const filterAffairs = (affairs: any, filter: any): any => { // need to fix any
+
+    return affairs // need to fix
 }
-export const deleteAffair = (affairs: any, _id: any): any => {
-    // need to fix any // (affairs: AffairType[], _id: number): AffairType[]
-    return affairs.filter((a: any) => a._id !== _id) // need to fix // создаёт студент
+export const deleteAffair = (affairs: any, _id: any): any => { // need to fix any
+
+    return affairs // need to fix
 }
 
 function HW2() {
-    const [affairs, setAffairs] = useState<any>(defaultAffairs) // need to fix any // AffairType[]
-    const [filter, setFilter] = useState<any>('all') // need to fix any // FilterType
+    const [affairs, setAffairs] = useState<any>(defaultAffairs) // need to fix any
+    const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
-    const deleteAffairCallback = (_id: any) =>
-        setAffairs(deleteAffair(affairs, _id)) // need to fix any // number
+    const deleteAffairCallback = (_id: any) => // need to fix any
+        setAffairs(deleteAffair(affairs, _id))
 
     return (
         <div id={'hw2'}>
@@ -58,7 +49,6 @@ function HW2() {
                     filter={filter}
                 />
             </div>
-            {/*не менять*/}
         </div>
     )
 }
