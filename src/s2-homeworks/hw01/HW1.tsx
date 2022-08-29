@@ -1,10 +1,10 @@
 import React from 'react'
-import Message from './Message'
-import MessageSender from './MessageSender'
-import s from './Message.module.css'
+import Message from './message/Message'
+import MessageSender from './message-sender/MessageSender'
 import s2 from '../../s1-main/App.module.css'
-import FriendMessage from './FriendMessage'
+import FriendMessage from './friend-message/FriendMessage'
 import avatar from './avatar.png'
+
 // нужно создать правильный тип вместо any
 export type MessageType = any
 
@@ -12,23 +12,23 @@ export type MessageType = any
 export const message0: MessageType = {
     id: 0,
     user: {
-        avatar: avatar,
-        name: 'Some Name',
+        avatar: avatar, // можно менять
+        name: 'Some Name',  // можно менять
     },
     message: {
-        text: 'some textsome textsome textsome textsome textsome textsome text',
-        time: '22:00',
+        text: 'some textsome textsome textsome textsome textsome textsome text', // можно менять
+        time: '22:00', // можно менять
     },
 }
 export const friendMessage0: MessageType = {
     id: 100,
     user: {
-        avatar: avatar,
-        name: 'Friend Name',
+        avatar: avatar, // можно менять
+        name: 'Friend Name', // можно менять
     },
     message: {
-        text: 'можно добавить зеркальное сообщение для тренировки css',
-        time: '22:00',
+        text: 'зеркальное сообщение для тренировки css', // можно менять
+        time: '22:00', // можно менять
     },
 }
 
@@ -40,7 +40,6 @@ const HW1 = () => {
                 {/*проверка отображения (не менять)*/}
                 <div>
                     <Message message={message0} />
-                    {/*не обязательно*/}
                     <FriendMessage message={friendMessage0} />
                 </div>
 
