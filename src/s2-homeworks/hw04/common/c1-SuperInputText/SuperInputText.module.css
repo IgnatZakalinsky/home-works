@@ -2,10 +2,6 @@
     border: 1px solid #06c;
 }
 
-.errorInput:focus {
-    border: 1px solid #cc1439;
-}
-
 .input {
     width: 370px;
     height: 36px;
@@ -22,12 +18,18 @@
     font-size: 16px;
     line-height: 20px;
 }
+.superInput {
+}
 
 .inputWrapper {
     position: relative;
 }
 
 .errorInput {
+    border: 1px solid #cc1439;
+}
+
+.errorInput:focus {
     border: 1px solid #cc1439;
 }
 
