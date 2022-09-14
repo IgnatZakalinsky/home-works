@@ -5,14 +5,22 @@ import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 import SuperButton from './common/c2-SuperButton/SuperButton'
 
 const Stand = () => {
-    const [stateForAllInputs, setValue] = useState('')
-    const [error, setError] = useState<undefined | string>(undefined)
+    const [stateForAllInputs, setValue] = useState<string>('')
+    const [error, setError] = useState<string>('')
 
-    const [stateForAllCheckboxes, setChecked] = useState(false)
+    const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
 
     return (
         <div id={'hw4-stand'} className={s.stand}>
             <div className={s.inputs}>
+                {/*совместим со старым кодом:*/}
+                <div>
+                    <SuperInputText
+                        id={'hw4-super-input-like-old'}
+                        value={stateForAllInputs}
+                        onChange={(e) => setValue(e.currentTarget.value)}
+                    />
+                </div>
                 {/*инпут с ошибкой:*/}
                 <div>
                     <SuperInputText
@@ -23,19 +31,11 @@ const Stand = () => {
                         onEnter={() => {
                             setError(
                                 stateForAllInputs.trim()
-                                    ? undefined
-                                    : 'some error'
+                                    ? ''
+                                    : 'Error'
                             )
                             setValue('')
                         }}
-                    />
-                </div>
-                {/*совместим со старым кодом*/}
-                <div>
-                    <SuperInputText
-                        id={'hw4-super-input-like-old'}
-                        value={stateForAllInputs}
-                        onChange={(e) => setValue(e.currentTarget.value)}
                     />
                 </div>
             </div>
@@ -63,6 +63,15 @@ const Stand = () => {
                         disabled
                     </SuperButton>
                 </div>
+                {/*задизэйбленная кнопка:*/}
+                <div>
+                    <SuperButton
+                        id={'hw4-super-button-secondary'}
+                        xType={'secondary'}
+                    >
+                        secondary
+                    </SuperButton>
+                </div>
             </div>
 
             <div className={s.checkboxes}>
@@ -76,7 +85,7 @@ const Stand = () => {
                         some text
                     </SuperCheckbox>
                 </div>
-                {/*совместим со старым кодом*/}
+                {/*совместим со старым кодом:*/}
                 <div>
                     <SuperCheckbox
                         id={'hw4-super-checkbox-like-old'}

@@ -1,38 +1,29 @@
-@keyframes blink {
-    0% {
-        left: -130%;
-    }
-    100% {
-        left: 130%;
-    }
-}
-
-
-.disabled {
-    background: #004d99;
-    opacity: 0.5;
-    color: #002e5c;
-}
-
-
 .button {
     overflow: hidden;
-    cursor: pointer;
-    border-radius: 3px;
-    border: 1px solid #0066CC;
-    color: white;
     padding: 5px 24px;
+
+    border-radius: 3px;
+    border: none;
+
+    color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 14px;
     line-height: 20px;
+    cursor: pointer;
+}
+
+.disabled {
+    color: #002e5c;
+    background: #004d99;
+    opacity: 0.5;
 }
 
 .secondary {
+    color: #0066CC;
     background: transparent;
     border: 1px solid #0066CC;
     border-radius: 3px;
-    color: #0066CC;
 }
 
 .default {
@@ -41,24 +32,6 @@
 
 .red {
     background: #cc1439;
-}
-
-.button::after {
-    display: block;
-    content: '';
-    position: absolute;
-
-    left: -130%;
-    top: 0;
-    height: 100%;
-    width: 20%;
-
-    transform: skew(45deg);
-
-    background-color: #fff;
-    opacity: 0.7;
-
-    z-index: 14;
 }
 
 .default:hover {
