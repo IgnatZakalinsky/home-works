@@ -26,7 +26,7 @@ const HW6 = () => {
         <div id={'hw6'}>
             <div className={s2.hwTitle}>Homework #6</div>
 
-            {/*should work (должно работать)*/}
+            {/*демонстрация возможностей компонент:*/}
             <div className={s2.hw}>
                 <div className={s.editableSpanContainer}>
                     <SuperEditableSpan
@@ -39,6 +39,7 @@ const HW6 = () => {
                         }}
                     />
                 </div>
+
                 <div className={s.buttonsContainer}>
                     <SuperButton id={'hw6-save'} onClick={save}>
                         Save to ls
