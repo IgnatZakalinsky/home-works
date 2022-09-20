@@ -5,8 +5,13 @@ import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import User from './User'
 
+/*
+* 1 - дописать типы и логику (сортировка по имени, фильтрация по совершеннолетию) homeWorkReducer, проверить тестом
+* 2 - дописать компоненту User
+* 3 - сделать стили в соответствии с дизайном
+* */
+
 export type UserType = {
-    // need to fix any
     _id: number
     name: string
     age: number
@@ -23,9 +28,9 @@ const initialPeople: UserType[] = [
 ]
 
 const HW8 = () => {
-    const [people, setPeople] = useState<UserType[]>(initialPeople) // need to fix any
+    const [people, setPeople] = useState<UserType[]>(initialPeople)
     const [currentSort, setCurrentSort] = useState('')
-    // need to fix any
+
     const finalPeople = people.map((u: UserType) => <User key={u._id} u={u}/>)
 
     const sortUp = () => {
@@ -77,7 +82,6 @@ const HW8 = () => {
                         </SuperButton>
                     </div>
 
-
                     <table id={'hw8-users'} className={s.users}>
                         <thead className={s.thead}>
                         <tr>
@@ -85,6 +89,7 @@ const HW8 = () => {
                             <td className={s.ageCol}>Age</td>
                         </tr>
                         </thead>
+
                         <tbody>{finalPeople}</tbody>
                     </table>
                 </div>
