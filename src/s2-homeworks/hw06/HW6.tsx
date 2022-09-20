@@ -5,6 +5,12 @@ import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import s from './HW6.module.css'
 
+/*
+ * 1 - в файле SuperEditableSpan.tsx дописать логику функций onEnterCallback, onBlurCallback, onDoubleClickCallBack
+ * 2 - дописать логику функции restore
+ * 3 - сделать стили в соответствии с дизайном
+ */
+
 const HW6 = () => {
     const [value, setValue] = useState<string>('')
 
@@ -22,27 +28,26 @@ const HW6 = () => {
 
             {/*should work (должно работать)*/}
             <div className={s2.hw}>
-                <div>
+                <div className={s.editableSpanContainer}>
                     <SuperEditableSpan
                         id={'hw6-spanable-input'}
                         value={value}
                         onChangeText={setValue}
                         spanProps={{
-                            children: value ? undefined : 'enter text...',
-                            id: 'hw6-editable-span',
+                            defaultText: 'enter text...'
                         }}
                     />
                 </div>
                 <div className={s.buttonsContainer}>
                     <SuperButton id={'hw6-save'} onClick={save}>
-                        save to ls
+                        Save to ls
                     </SuperButton>
                     <SuperButton
                         id={'hw6-restore'}
                         onClick={restore}
                         xType={'secondary'}
                     >
-                        get from ls
+                        Get from ls
                     </SuperButton>
                 </div>
             </div>

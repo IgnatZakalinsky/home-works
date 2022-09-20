@@ -7,16 +7,13 @@ import React, {
 import s from './SuperEditableSpan.module.css'
 import SuperInputText from '../../../hw04/common/c1-SuperInputText/SuperInputText'
 import editIcon from './editIcon.svg'
+
 // тип пропсов обычного инпута
-type DefaultInputPropsType = DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
->
+type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement>
 // тип пропсов обычного спана
-type DefaultSpanPropsType = DetailedHTMLProps<
-    HTMLAttributes<HTMLSpanElement>,
-    HTMLSpanElement
->
+type DefaultSpanPropsType = DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>,
+    HTMLSpanElement>
 
 // здесь мы говорим что у нашего инпута будут такие же пропсы как у обычного инпута, кроме type
 // (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
@@ -26,20 +23,23 @@ type SuperEditableSpanType = Omit<DefaultInputPropsType, 'type'> & {
     onEnter?: () => void
     error?: string
 
-    spanProps?: DefaultSpanPropsType // пропсы для спана
+    spanProps?: DefaultSpanPropsType  & {defaultText?: string}// пропсы для спана
 }
 
-const SuperEditableSpan: React.FC<SuperEditableSpanType> = ({
-    autoFocus,
-    onBlur,
-    onEnter,
-    spanProps,
+const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
+    {
+        id,
+        autoFocus,
+        onBlur,
+        onEnter,
+        spanProps,
 
-    ...restProps // все остальные пропсы попадут в объект restProps
-}) => {
+        ...restProps // все остальные пропсы попадут в объект restProps
+    }
+) => {
     const [editMode, setEditMode] = useState<boolean>(false)
-    const { children, onDoubleClick, className, ...restSpanProps } =
-        spanProps || {}
+    const {children, onDoubleClick, className, defaultText, ...restSpanProps} =
+    spanProps || {}
 
     const onEnterCallback = () => {
         setEditMode(false) // выключить editMode при нажатии Enter // делают студенты
@@ -59,12 +59,14 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = ({
         onDoubleClick?.(e)
     }
 
-    const spanClassName = `${s.span} ${className ? className : ''}`
+    const spanClassName = s.span
+        + (className ? ' ' + className : '')
 
     return (
         <>
             {editMode ? (
                 <SuperInputText
+                    id={id}
                     autoFocus={autoFocus || true}
                     onBlur={onBlurCallback}
                     onEnter={onEnterCallback}
@@ -72,20 +74,23 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = ({
                     {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
                 />
             ) : (
-                <span
-                    onDoubleClick={onDoubleClickCallBack}
-                    className={spanClassName}
-                    {...restSpanProps}
-                >
-                    {/*если нет захардкодженного текста для спана, то значение инпута*/}
+                <div className={s.spanBlock}>
                     <img
                         src={editIcon}
-                        width={'24px'}
-                        height={'24px'}
+                        className={s.pen}
                         alt={'edit'}
-                    />{' '}
-                    {children || restProps.value}
-                </span>
+                    />
+                    <span
+                        id={id ? id + '-span' : undefined}
+                        onDoubleClick={onDoubleClickCallBack}
+                        className={spanClassName}
+                        {...restSpanProps}
+                    >
+                        {/*если нет захардкодженного текста для спана, то значение инпута*/}
+
+                        {children || restProps.value || defaultText}
+                    </span>
+                </div>
             )}
         </>
     )
