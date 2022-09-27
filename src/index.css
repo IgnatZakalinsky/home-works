@@ -20,24 +20,3 @@ code {
     monospace;
 }
 
-[data-theme='1'] {
-
-    --background: #FFFFFF;
-    --color: #000000;
-}
-
-[data-theme='2'] {
-    --color: #000000;
-    --background: #DDEEFF;
-}
-
-[data-theme='3'] {
-    --color: #FFFFFF;
-    --background: #212A34;
-
-}
-
-html {
-    background-color: var(--background);
-    color: var(--color);
-}
