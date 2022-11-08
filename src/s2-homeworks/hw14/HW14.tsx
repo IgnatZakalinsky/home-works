@@ -26,15 +26,20 @@ const getTechs = (find: string) => {
 
 const HW14 = () => {
     const [find, setFind] = useState('')
+    const [isLoading, setLoading] = useState(false)
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<string[]>([])
 
     const sendQuery = (value: string) => {
+        setLoading(true)
         getTechs(value)
             .then((res) => {
                 // делает студент
 
-                if (res) setTechs(res.data.techs)
+                if (res) {
+                    setTechs(res.data.techs)
+                }
+                setLoading(false)
 
                 //
             })
@@ -75,6 +80,9 @@ const HW14 = () => {
                     onChangeText={onChangeText}
                     onDebouncedChange={sendQuery}
                 />
+                <span id={'hw14-loading'}>
+                    {isLoading && '...ищем'}
+                </span>
                 {mappedTechs}
             </div>
         </div>
