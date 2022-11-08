@@ -9,8 +9,9 @@ import {useSearchParams} from 'react-router-dom'
 * 1 - дописать функцию onChangeTextCallback в SuperPagination
 * 2 - дописать функцию sendQuery в HW14
 * 3 - дописать функцию onChangeText в HW14
-* 4 - сделать стили в соответствии с дизайном
-* 5 - добавить HW14 в HW5/pages/JuniorPlus
+* 4 - показать текст во время загрузки
+* 5 - сделать стили в соответствии с дизайном
+* 6 - добавить HW14 в HW5/pages/JuniorPlus
 * */
 
 const getTechs = (find: string) => {
@@ -80,13 +81,15 @@ const HW14 = () => {
                     onChangeText={onChangeText}
                     onDebouncedChange={sendQuery}
                 />
-                {isLoading ? (
-                    <div id={'hw14-loading'}>
-                        ...ищем
-                    </div>
-                ) : (
-                    <br/>
-                )}
+
+                {/*делает студент*/}
+                {/*показать текст во время загрузки*/}
+
+                <div id={'hw14-loading'} className={s.loading}>
+                    {isLoading ? '...ищем' : <br/>}
+                </div>
+
+                {/**/}
 
                 {mappedTechs}
             </div>
