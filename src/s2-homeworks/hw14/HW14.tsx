@@ -81,9 +81,9 @@ const HW14 = () => {
                     onDebouncedChange={sendQuery}
                 />
                 {isLoading ? (
-                    <span id={'hw14-loading'}>
+                    <div id={'hw14-loading'}>
                         ...ищем
-                    </span>
+                    </div>
                 ) : (
                     <br/>
                 )}
