@@ -4,12 +4,13 @@ import s from './HW15.module.css'
 import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
-import SuperButton from "../hw04/common/c2-SuperButton/SuperButton";
+import SuperSort from './common/c10-SuperSort/SuperSort'
 
 /*
 * 1 - дописать SuperPagination
-* 2 - дописать функцию send в HW15
-* 3 - дописать функцию onChangeText в HW15
+* 2 - дописать SuperSort
+* 3 - проверить pureChange тестами
+* 3 - дописать sendQuery, onChangePagination, onChangeSort
 * 4 - сделать стили в соответствии с дизайном
 * 5 - добавить HW15 в HW5/pages/JuniorPlus
 * */
@@ -53,7 +54,7 @@ const HW15 = () => {
             })
     }
 
-    const onChange = (newPage: number, newCount: number) => {
+    const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
         setPage(newPage)
@@ -62,8 +63,24 @@ const HW15 = () => {
         const countQuery: { count?: string } = newCount !== 4 ? {count: newCount + ''} : {} // если стандарт - то не записывать в урл
         const {count, page, ...lastQueries} = Object.fromEntries(searchParams)
 
-        sendQuery({page: newPage || '', count: newCount || ''})
-        setSearchParams({...lastQueries, ...pageQuery, ...countQuery})
+        const allQuery = {...lastQueries, ...pageQuery, ...countQuery}
+        sendQuery(allQuery)
+        setSearchParams(allQuery)
+
+        //
+    }
+
+    const onChangeSort = (newSort: string) => {
+        // делает студент
+
+        setSort(newSort)
+        setPage(1) // при сортировке сбрасывать на 1 страницу
+        const sortQuery: { sort?: string } = newSort !== '' ? {sort: newSort} : {} // если стандарт - то не записывать в урл
+        const {sort, page, ...lastQueries} = Object.fromEntries(searchParams)
+
+        const allQuery = {...lastQueries, ...sortQuery}
+        sendQuery(allQuery)
+        setSearchParams(allQuery)
 
         //
     }
@@ -76,14 +93,14 @@ const HW15 = () => {
     }, [])
 
     const mappedTechs = techs.map(t => (
-        <div key={t.id} className={s.tech}>
-            <span id={'hw15-tech-' + t.id}>
+        <div key={t.id} className={s.row}>
+            <div id={'hw15-tech-' + t.id} className={s.tech}>
                 {t.tech}
-            </span>
-            -----
-            <span id={'hw15-developer-' + t.id}>
+            </div>
+
+            <div id={'hw15-developer-' + t.id} className={s.developer}>
                 {t.developer}
-            </span>
+            </div>
         </div>
     ))
 
@@ -94,42 +111,21 @@ const HW15 = () => {
             <div className={s2.hw}>
                 <SuperPagination
                     page={page}
-                    count={count}
+                    itemsCountForPage={count}
                     totalCount={totalCount}
-                    onChange={onChange}
+                    onChange={onChangePagination}
                 />
 
-                таблица:
+                <div className={s.rowHeader}>
+                    <div className={s.techHeader}>
+                        tech
+                        <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
+                    </div>
 
-                <div>
-                    tech
-                    <SuperButton // позже СуперСорт
-                        onClick={() => setSort(sort === '1tech'
-                            ? '0tech'
-                            : sort == '0tech'
-                                ? ''
-                                : '1tech')}
-                    >
-                        {sort === '1tech'
-                            ? '\\/'
-                            : sort === '0tech'
-                                ? '/\\'
-                                : '-'}
-                    </SuperButton>
-                    developer
-                    <SuperButton
-                        onClick={() => setSort(sort === '1developer'
-                            ? '0developer'
-                            : sort === '0developer'
-                                ? ''
-                                : '1developer')}
-                    >
-                        {sort === '1developer'
-                            ? '\\/'
-                            : sort === '0developer'
-                                ? '/\\'
-                                : '-'}
-                    </SuperButton>
+                    <div className={s.developerHeader}>
+                        developer
+                        <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
+                    </div>
                 </div>
 
                 {mappedTechs}
