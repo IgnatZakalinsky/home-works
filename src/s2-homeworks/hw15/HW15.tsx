@@ -36,11 +36,13 @@ const HW15 = () => {
     const [sort, setSort] = useState('')
     const [page, setPage] = useState(1)
     const [count, setCount] = useState(4)
+    const [idLoading, setLoading] = useState(false)
     const [totalCount, setTotalCount] = useState(100)
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
     const sendQuery = (params: any) => {
+        setLoading(true)
         getTechs(params)
             .then((res) => {
                 // делает студент
@@ -50,6 +52,7 @@ const HW15 = () => {
                     setTotalCount(res.data.totalCount)
                 }
 
+                setLoading(false)
                 //
             })
     }
@@ -109,6 +112,8 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw}>
+                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+
                 <SuperPagination
                     page={page}
                     itemsCountForPage={count}
